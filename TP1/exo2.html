@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - exo2</title>
+</head>
+<body>
+
+    <script>
+        const body = document.querySelector("body");
+
+        const paragraphe1 = document.createElement("p");
+        const paragraphe2 = document.createElement("p");
+        const paragraphe3 = document.createElement("p");
+        
+        body.appendChild(paragraphe1).style.fontWeight = "bold";
+        paragraphe1.innerHTML = "Je suis le 1er paragraphe en gras";
+
+        body.appendChild(paragraphe2).style.fontStyle = "italic";
+        paragraphe2.innerHTML = "Je suis le 2ème paragraphe en italique";
+
+        body.appendChild(paragraphe3).style.textTransform = "uppercase";
+        paragraphe3.innerHTML = "Je suis le 3ème paragraphe en uppercase";
+    </script>
+    
+</body>
+</html>

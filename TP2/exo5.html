@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 - exo5</title>
+</head>
+<body>
+
+    <img src="img/logo-edge.png">
+    <img src="img/logo-firefox.png">
+    <img src="img/logo-google_chrome.png">
+
+    <script>
+        const img = document.getElementsByTagName("img");
+
+        function zoom(e){
+            e.style.zoom = "3"; 
+        }
+        function dezoom(e){
+            e.style.zoom = "1"; 
+        }
+        img.addEventListener("mouseover", zoom(img), false);
+        img.addEventListener("mouseout", zoom(img), false);
+
+    </script>
+
+</body>
+</html>
