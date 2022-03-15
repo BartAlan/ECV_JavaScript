@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP1 - exo6</title>
+</head>
+<body>
+
+    <ul>
+        <li>Toto</li>
+        <li>Tata</li>
+        <li>Titi</li>
+        <li>Tutu</li>
+    </ul>
+    
+
+    <script>   
+        const li = document.querySelectorAll("li");
+        const newLi = document.createElement("li");
+        newLi.innerHTML = "NEW";
+
+        li[1].replaceWith(newLi);
+    </script>
+    
+</body>
+</html>

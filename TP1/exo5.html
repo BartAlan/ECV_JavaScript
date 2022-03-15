@@ -24,9 +24,11 @@
     </div>
 
     <script>   
-        const para = document.getElementsByTagName("p");
-        
-        para.remove();
+        const para = document.querySelectorAll("p");
+
+        for(let i=0; i<para.length; i++){
+            para[i].remove();
+        }
     </script>
     
 </body>
