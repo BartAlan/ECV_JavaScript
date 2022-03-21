@@ -11,8 +11,10 @@
     <img onclick="rotate(this)" src="img/logo-google_chrome.png">
 
     <script>        
+        let deg = 0;
         function rotate(e) {
-            e.style.transform += "rotate(90deg)";
+            deg += 90;
+            e.style.transform = "rotate("+deg+"deg)";
         };
     </script>
     

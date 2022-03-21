@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP2 - exo7</title>
+</head>
+<body>
+
+    <div>
+        <h1>Titre h1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, laboriosam.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, laboriosam.</p>
+        <img src="img/logo-firefox.png" width="100px" alt="Logo Firefox">
+    </div>
+
+    <script>
+        const all = document.querySelector("*");
+
+        all.addEventListener('click', function(e){
+            let element = e.target;
+            element.remove();
+        });
+    </script>
+
+</body>
+</html>

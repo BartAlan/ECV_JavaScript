@@ -11,30 +11,37 @@
     <script>
         const body = document.querySelector("body");
         const div = document.createElement("div");
-        div.style.cssText = "width: 50px; aspect-ratio: 1/1; background-color: purple; position: absolute; left: 0px; top: 0px";
+        div.style.cssText = "width: 50px; aspect-ratio: 1/1; background-color: pink; position: absolute; left: 0px; top: 0px";
         body.appendChild(div);
 
-        function move(e){
+        let moveH = 0;
+        let moveV = 0;
+        let dist = 5;
+        
+        document.addEventListener("keydown", function(e){
 
-            switch (e.keyCode) {
-                case 37: //left arrow
-                    div.style.left -= "5px";
-                    break;
-
-                case 39: //right arrow
-                    div.style.left += "5px";
-                    break;
-
-                case 38: //up arrow
-                    div.style.top -= "5px";
-                    break;
-
-                case 40: //down arrow
-                    div.style.top += "5px";
-                    break;
+            switch (e.which) {
+                case 37: // left arrow
+                moveH -= dist;
+                div.style.left = moveH+"px";
+                break;
+                
+                case 39: // right arrow
+                moveH += dist;
+                div.style.left = moveH+"px";
+                break;
+                
+                case 38: // up arrow
+                moveV -= dist;
+                div.style.top = moveV+"px";
+                break;
+                
+                case 40: // down arrow
+                moveV += dist;
+                div.style.top = moveV+"px";
+                break;
             }
-        }
-        document.addEventListener('keydown', move);
+        });
 
     </script>
 

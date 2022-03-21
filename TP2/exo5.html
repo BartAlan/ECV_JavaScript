@@ -8,22 +8,17 @@
 </head>
 <body>
 
-    <img src="img/logo-edge.png">
-    <img src="img/logo-firefox.png">
-    <img src="img/logo-google_chrome.png">
+    <img onmouseover="zoom(this)" onmouseout="dezoom(this)" width="100px" src="img/logo-edge.png">
+    <img onmouseover="zoom(this)" onmouseout="dezoom(this)"" width="100px" src="img/logo-firefox.png">
+    <img onmouseover="zoom(this)" onmouseout="dezoom(this)" width="100px" src="img/logo-google_chrome.png">
 
     <script>
-        const img = document.getElementsByTagName("img");
-
         function zoom(e){
-            e.style.zoom = "3"; 
+            e.style.zoom = 3;
         }
         function dezoom(e){
-            e.style.zoom = "1"; 
+            e.style.zoom = 1;
         }
-        img.addEventListener("mouseover", zoom(img), false);
-        img.addEventListener("mouseout", zoom(img), false);
-
     </script>
 
 </body>

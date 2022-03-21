@@ -16,10 +16,8 @@
 
     <script>
         const list = document.getElementById("list");
-        // A REVOIR
-        list.style.cssText = "display: flex; flex-direction: column-reverse;";
         function moveToFirst(e) {
-            list.append(e);
+            list.insertBefore(e, list.children[0]);
         }
     </script>
     
