@@ -13,9 +13,7 @@
         const para = document.createElement("p");
         document.body.appendChild(para);
 
-        const resize = () => {
-            para.textContent = "Largeur : "+window.innerWidth+"px / Hauteur : "+window.innerHeight+"px";
-        }
+        const resize = () => para.textContent = "Largeur : "+window.innerWidth+"px / Hauteur : "+window.innerHeight+"px";
         window.addEventListener("load", resize);
         window.addEventListener("resize", resize);
 
