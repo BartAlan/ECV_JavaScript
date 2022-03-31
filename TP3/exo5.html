@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP3 - exo5</title>
+</head>
+<body>
+
+    <script>
+
+        const para = document.createElement("p");
+        document.body.appendChild(para);
+
+        const resize = () => {
+            para.textContent = "Largeur : "+window.innerWidth+"px / Hauteur : "+window.innerHeight+"px";
+        }
+        window.addEventListener("load", resize);
+        window.addEventListener("resize", resize);
+
+    </script>
+    
+</body>
+</html>
