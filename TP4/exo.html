@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP4</title>
+</head>
+<body>
+    <h1>Afficher la console</h1>
+    
+    <script>
+
+        function  revert(str) {
+            return str.split("").reverse().join("");
+        }
+
+        function ucFirst(word) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+
+        function capitalize(str) {
+            return str.split(" ").map(ucFirst).join(" ");
+        }
+
+        function pascalCase(str) {
+            return str.split(" ").map(ucFirst).join("");
+        }
+
+        function palindrome(str) {
+            return str == revert(str) ? true : false;
+        }
+
+        function findLongestWord(str) {
+            const splitWord = str.split(" ");
+            let record = 0;
+            let word;
+
+            for(let i=0; i<splitWord.length; i++){
+                if(splitWord[i].length > record){
+                    record = splitWord[i].length;
+                    word = splitWord[i];
+                }
+            }
+            return word;
+        }
+        
+        console.log("revert : "+revert("Hello I'm Robert !"));
+
+        console.log("ucFirst : "+ucFirst("hello"));
+
+        console.log("capitalize : "+capitalize("hello i'm robert"));
+
+        console.log("pascalCase : "+pascalCase("sentence in pascalCase"));
+
+        console.log("palindrome : "+palindrome("kayak"));
+
+        console.log("findLongestWord : "+findLongestWord("Le chemin le plus cours n'est pas toujours le meilleur"));
+
+    </script>
+    
+</body>
+</html>
