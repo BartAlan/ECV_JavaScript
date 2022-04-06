@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP5 - exo5</title>
+</head>
+<body>
+    <h1>Afficher la console</h1>
+    
+    <script>
+
+        function combinations(...arg){
+
+            console.log(arg.reduce((previousValue, currentValue) => previousValue * currentValue, 1));
+
+        }
+
+        combinations(2, 3);
+        combinations(3, 7, 4);
+        combinations(2, 3, 4, 5);
+
+    </script>
+    
+</body>
+</html>

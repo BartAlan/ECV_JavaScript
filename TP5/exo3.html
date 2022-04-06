@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP5 - exo3</title>
+</head>
+<body>
+    <h1>Afficher la console</h1>
+    
+    <script>
+
+        function intersection(arr1, arr2){
+
+            let arr3 = [];
+
+            for(let i=0; i<arr1.length; i++){
+                for(let j=0; j<arr2.length; j++){  
+
+                    if(arr1[i] === arr2[j]){
+                        arr3.push(arr1[i]);
+                    }
+                }
+            }
+            console.log(arr3);
+
+        }
+
+        const first = [0, 2, 4, 6, 8, 8];
+        const second = [1, 2, 3, 4, 5, 6];
+
+        intersection(first, second);
+
+    </script>
+    
+</body>
+</html>
