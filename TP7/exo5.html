@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP7 - exo5</title>
+</head>
+<body>
+
+    <script>
+
+        // Exo 1
+        async function lessThan20ch() {
+            try {
+                myPromise1(myString).then(res => console.log(res));
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        const myPromise1 = (value) => {
+            return new Promise((resolve, failure) => {
+                if(myString.length <= 20){
+                    resolve("exo1 : "+true);
+                }
+                else {
+                    failure("exo1 : "+false);
+                }
+            })
+        }
+
+        const myString = "Ceci est une phrase";
+        lessThan20ch();
+
+
+
+        // Exo 2
+        async function difference() {
+            try {
+                myPromise2(a, b).then(res => console.log("exo2 : "+true, res));
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        const myPromise2 = (value) => {
+            return new Promise((resolve, failure) => {
+                if(a >=b){
+                    resolve(`${a - b}`);
+                }
+                else{
+                    failure("exo2 : "+false);
+                }
+            })
+        }
+
+        const a = 6, b = 4;
+        difference();
+
+
+
+        // Exo 3
+        async function checkAge() {
+            try{
+                myPromise3(myDateArray).then(res => console.log(res));
+            } catch(e) {
+                console.log(e);
+            }
+        }
+
+        const myPromise3 = (value) => {
+            return new Promise((resolve, failure) => {
+
+                const vrai = "exo3 : "+true;
+                
+                if((currentDate[2] - myDateArray[2]) >= 18 ){
+                    resolve(vrai);
+                }
+                else{
+                    if(myDateArray[0] == currentDate[0] && myDateArray[1] <= currentDate[1]){
+                        resolve(vrai);
+                    }
+                    else {
+                        if(myDateArray[1] == currentDate[1] && myDateArray[2] <= currentDate[2]){
+                            resolve(vrai);
+                        }
+                        else{
+                            failure("exo3 : "+false);
+                        }
+                    }
+                }
+            })
+        }
+
+        const myDate = "15/06/2000";
+        const currentDate = new Date().toLocaleDateString("fr").split("/");
+        const myDateArray = myDate.split("/");
+        checkAge();
+
+    </script>
+    
+</body>
+</html>

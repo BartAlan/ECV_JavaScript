@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP7 - exo3</title>
+</head>
+<body>
+
+    <script>
+
+        function checkAge(myDate) {
+            
+            const currentDate = new Date().toLocaleDateString("fr").split("/");
+            const myDateArray = myDate.split("/");
+
+            return new Promise((succesCallBack, failureCallBack) => {
+                if((currentDate[2] - myDateArray[2]) >= 18 ){
+                    succesCallBack(true);
+                }
+                else{
+                    if(myDateArray[0] == currentDate[0] && myDateArray[1] <= currentDate[1]){
+                        succesCallBack(true);
+                    }
+                    else {
+                        if(myDateArray[1] == currentDate[1] && myDateArray[2] <= currentDate[2]){
+                            succesCallBack(true);
+                        }
+                        else{
+                            failureCallBack(false);
+                        }
+                    }
+                }
+            })
+        }
+
+        function succesCallBack(résultat){
+            console.log(résultat);
+        }
+
+        function failureCallBack(erreur){
+            console.log(erreur);
+        }
+
+        const myDate = "15/06/2000";
+        const promise = checkAge(myDate);
+        promise.then(succesCallBack, failureCallBack);
+
+    </script>
+    
+</body>
+</html>

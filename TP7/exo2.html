@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP7 - exo2</title>
+</head>
+<body>
+
+    <script>
+
+        function difference(int1, int2){
+            return new Promise((succesCallBack, failureCallBack) => {
+                if(int1 > int2){
+                    succesCallBack(true);
+                }
+                else{
+                    failureCallBack(false);
+                }
+            })
+        }
+
+        function succesCallBack(résultat){
+            console.log(résultat+` ${a - b}`);
+        }
+
+        function failureCallBack(erreur){
+            console.log(erreur);
+        }
+
+        const a = 6, b = 4;
+        const promise = difference(a, b);
+        promise.then(succesCallBack, failureCallBack);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP7 - exo1</title>
+</head>
+<body>
+
+    <script>
+
+        function lessThan20ch(str){
+            return new Promise((succesCallBack, failureCallBack) => {
+                if(str.length <= 20){
+                    succesCallBack(true);
+                }
+                else{
+                    failureCallBack(false);
+                }
+            })
+        }
+
+        function succesCallBack(résultat){
+            console.log(résultat);
+        }
+
+        function failureCallBack(erreur){
+            console.log(erreur);
+        }
+
+        const myString = "Ceci est une phrase";
+        const promise = lessThan20ch(myString);
+        promise.then(succesCallBack, failureCallBack);
+        
+    </script>
+    
+</body>
+</html>
