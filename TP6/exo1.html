@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP6 - exo1</title>
+</head>
+<body>
+    
+    <script>
+
+        fiscalCode({
+            name: "Matt",
+            surname: "Edabit",
+            gender: "M",
+            dob: "1/1/1900"
+        }); //"DBTMTT00A01"
+
+        fiscalCode({
+            name: "Helen",
+            surname: "Yu",
+            gender: "F",
+            dob: "1/12/1950"
+        }) //"YUXHLN50T41"
+
+        fiscalCode({
+            name: "Mickey",
+            surname: "Mouse",
+            gender: "M",
+            dob: "16/1/1928"
+        }) // "MSOMCK28A16"
+
+        document.body.innerHTML = "<p><b>Expected output : </b><br><br>DBTMTT00A01<br>YUXHLN50T41<br>MSOMCK28A16</p>";
+        
+        function fiscalCode(person){
+            
+            const voyelles = ["A","E","I","O","U"];
+            
+            const codeName = Object.values(person.name.toUpperCase());
+            const codeSurname = Object.values(person.surname.toUpperCase());
+            const codeGender = Object.values(person.gender.toUpperCase());
+            const codeDob = person.dob.toUpperCase();
+        
+            function generateSurname(...args){
+
+                for(i=0; i<args.length; i++){
+                    let id = [];
+                    let newTab = [];
+
+                    args[i].forEach(element => {
+                        if(!voyelles.includes(element)){
+                            if(id.length < 3){
+                                id.push(element);
+                            }
+                        }
+                        else{
+                            newTab.push(element);
+                        }
+
+                        idName = id.concat(newTab);
+                        idName.splice(3, idName.length);
+                        
+                        if(idName.length < 3){
+                            idName.push("X");
+                        }
+                    });
+                    args[i] = idName;
+                }
+                idName = args[0].concat(args[1]);
+            }
+            generateSurname(codeSurname, codeName);
+
+
+            function generateYear(){
+                dobYear = codeDob.substr(-2).split("")
+            }
+            generateYear();
+
+
+            function generateMonth(){
+
+                switch(parseInt(codeDob.split("/")[1])) {
+                    case 1 :
+                        month = "A";
+                        break;
+                        
+                    case 2 :
+                        month = "B";
+                        break;
+
+                    case 3 :
+                        month = "C";
+                        break;
+                        
+                    case 4 :
+                        month = "D";
+                        break;
+                        
+                    case 5 :
+                        month = "E";
+                        break;
+                        
+                    case 6 :
+                        month = "H";
+                        break;
+                        
+                    case 7 :
+                        month = "L";
+                        break;
+                        
+                    case 8 :
+                        month = "M";
+                        break;
+                        
+                    case 9 :
+                        month = "P";
+                        break;
+                        
+                    case 10 :
+                        month = "R";
+                        break;
+
+                    case 11 :
+                        month = "S";
+                        break;
+                        
+                    case 12 :
+                        month = "T";
+                        break;
+                        
+                    default :
+                        month = "neant";
+                        break;
+                    }
+
+                    idMonth = month.split("");
+                }
+                generateMonth();
+
+
+                function generateGender(){
+
+                    let dobSplit = codeDob.split("/")[0];
+
+                    if(codeGender == "M"){
+                        if(dobSplit < 10){
+                            idGender = "0" + dobSplit.split("");
+                        }
+                        else{
+                            idGender = dobSplit;
+                        }
+                    }
+                    else if(codeGender == "F"){
+                        idGender = 40 + parseInt(dobSplit);
+                    }
+                    else{
+                        idGender = "X"; // Pour les non binaire
+                    }
+                }
+                generateGender();
+            
+
+                function generatefiscalCode(){
+                    idFiscalCode = idName.concat(dobYear, idMonth, idGender).join("");
+                    console.log(person.name+" "+person.surname+" : ", idFiscalCode);
+                }
+                generatefiscalCode();
+        }        
+        
+        </script>
+        
+        </body>
+        </html>
