@@ -16,21 +16,11 @@
             const myDateArray = myDate.split("/");
 
             return new Promise((succesCallBack, failureCallBack) => {
-                if((currentDate[2] - myDateArray[2]) >= 18 ){
+                if((currentDate[2] - myDateArray[2]) >= 18 && myDateArray[1] >= currentDate[1] && myDateArray[0] >= currentDate[0]){
                     succesCallBack(true);
                 }
                 else{
-                    if(myDateArray[0] == currentDate[0] && myDateArray[1] <= currentDate[1]){
-                        succesCallBack(true);
-                    }
-                    else {
-                        if(myDateArray[1] == currentDate[1] && myDateArray[2] <= currentDate[2]){
-                            succesCallBack(true);
-                        }
-                        else{
-                            failureCallBack(false);
-                        }
-                    }
+                    failureCallBack(false);
                 }
             })
         }
@@ -43,7 +33,7 @@
             console.log(erreur);
         }
 
-        const myDate = "15/06/2000";
+        const myDate = "15/06/2004";
         const promise = checkAge(myDate);
         promise.then(succesCallBack, failureCallBack);
 

@@ -74,21 +74,11 @@
 
                 const vrai = "exo3 : "+true;
                 
-                if((currentDate[2] - myDateArray[2]) >= 18 ){
+                if((currentDate[2] - myDateArray[2]) >= 18 && myDateArray[1] >= currentDate[1] && myDateArray[0] >= currentDate[0]){
                     resolve(vrai);
                 }
                 else{
-                    if(myDateArray[0] == currentDate[0] && myDateArray[1] <= currentDate[1]){
-                        resolve(vrai);
-                    }
-                    else {
-                        if(myDateArray[1] == currentDate[1] && myDateArray[2] <= currentDate[2]){
-                            resolve(vrai);
-                        }
-                        else{
-                            failure("exo3 : "+false);
-                        }
-                    }
+                    failure("exo 3 : "+false);
                 }
             })
         }
